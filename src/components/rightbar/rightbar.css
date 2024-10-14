@@ -1,0 +1,45 @@
+.rightbar-container {
+    flex: 3.5;
+    position: sticky;
+    top: 50px;
+    overflow-y: scroll;
+    height: calc(100vh - 50px);
+}
+
+.rightbar-wrapper {
+    padding-top: 20px;
+    /* padding-right: 20px; */
+}
+
+.birthday-container {
+    display: flex;
+    align-items: center;
+}
+
+.birthday-img {
+    height: 40px;
+    width: 40px;
+    margin-right: 10px;
+}
+
+.birthday-text {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.rightbar-ad {
+    width: 100%;
+    border-radius: 10px;
+    margin: 30px 0px;
+
+}
+
+.rightbar-title {
+    margin-bottom: 20px;
+}
+
+.rightbar-friend-list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
