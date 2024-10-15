@@ -1,9 +1,16 @@
 import "./post.css";
 import { MoreVert, ThumbUp, Favorite } from '@mui/icons-material';
 import { Users } from "../../dummyData";
+import { useState } from "react";
 
 
 const Post = ({ post }) => {
+    const [like, setLike] = useState(post.like);
+    const [isLike, setIsLike] = useState(false);
+    const likeHandle = () => {
+        setLike(isLike ? like - 1 : like + 1);
+        setIsLike(!isLike);
+    }
     return (
         <div className="post-container">
             <div className="post-wrapper">
@@ -23,9 +30,9 @@ const Post = ({ post }) => {
                 </div>
                 <div className="post-bottom">
                     <div className="post-bottom-left">
-                        <ThumbUp className="post-like-icon" fontSize="small" />
-                        <Favorite className="post-favorite-icon" fontSize="small" />
-                        <span className="post-like-counter">{post.like} people like it</span>
+                        <ThumbUp className="post-like-icon" fontSize="small" onClick={likeHandle} />
+                        <Favorite className="post-favorite-icon" fontSize="small" onClick={likeHandle} />
+                        <span className="post-like-counter">{like} people like it</span>
                     </div>
                     <div className="post-bottom-right">
                         <span className="post-comment-text">{post.comment} comment</span>
